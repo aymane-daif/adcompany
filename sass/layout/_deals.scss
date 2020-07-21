@@ -1,0 +1,40 @@
+#deals {
+    border-bottom: 1px solid $color-secondary-dark;
+    .deals {
+        display: flex;
+        margin: 0 4rem;
+        padding-bottom: 8rem;
+        .deal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-left: 6rem;
+            
+        }
+
+    }
+    i {
+        color: $color-primary-dark;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transform: scale(1);
+        transition: all .5s .3s;
+        &:hover {
+            color: $color-secondary-dark;
+            transform: scale(1.2);
+        }
+       
+    }
+    h3 {
+        font-size: 2rem;
+        color: $color-grey-dark;
+    }
+    p {
+        font-size: 1.5rem;
+        color: $color-black-1;
+    }
+    @include respond(phone) { // width <610?
+       display: none;
+     } 
+}

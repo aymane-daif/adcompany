@@ -1,0 +1,24 @@
+.text-center { text-align: center; }
+.container {
+    max-width: 107rem;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+.heading {
+    h2 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+    .description {
+        font-size: 2rem;
+        margin-bottom: 2.9rem;
+    }
+}
+.bottom-line {
+    background: $color-primary;
+    width: 6rem;
+    height: 4px;
+    margin: auto;
+    margin-bottom: 3.5rem;
+}

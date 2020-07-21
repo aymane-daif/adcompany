@@ -1,0 +1,65 @@
+#shoes {
+    margin-bottom: 4rem;
+    .shoes-wrapper {
+        background: #f7f7f7;
+        display: grid;
+        grid-template-columns: 47rem minmax(45rem,1fr);
+        padding-bottom: 6rem;
+        @include respond(tab-land) { // width < 940?
+            grid-template-columns: 1fr;
+
+         } 
+        & > img {
+             @include respond(tab-land) { // width < 940?
+                display: none;
+            } 
+        }
+        .shoes-items {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2,24rem);
+            grid-gap: 2rem;
+            @include respond(phone) { // width < 610?
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            
+            .shoes {
+
+                width: 25rem;
+                margin: 0 auto;
+                text-align: center;
+                padding: 3rem 3rem;
+                border: 1px solid #bca480;
+                transform: scale(1);
+                transition: all .6s;
+                &:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 9px 21px rgba(0,0,0,0.4);
+                }
+                img {
+                    height: 100%;
+                    width: 100%;
+                    margin-top: -2.3rem;
+                }
+                p {
+                    margin: 0 0;
+                    font-size: 1.4rem;
+                    color: $color-grey-dark;
+                    transition: all .5s;
+                    cursor: pointer;
+                    
+                }
+                p:last-child {
+                    color: $color-black-1;
+                    font-weight: 500;
+                }
+                p:hover {
+                    color: $color-primary-dark;
+                }
+                .m-t {margin-top: -2rem;}
+                
+            }
+        }
+    }
+}

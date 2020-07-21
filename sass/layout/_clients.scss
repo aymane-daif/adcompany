@@ -1,0 +1,54 @@
+#clients {
+    padding: 4rem 0 0 0;
+    .parent {
+        position: relative;
+        padding: 15rem 0;
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -3;
+            opacity: .4;
+            overflow: hidden;
+            .video {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .testimonials {
+            grid-template-columns: 1fr 1fr;
+            display: grid;
+            grid-gap: 4rem;
+            @include respond(tab-port) { // width < 940?
+                grid-template-columns: 1fr;
+            }
+            .client {
+                display: flex;
+                margin: 0 4rem;
+                align-items: center;
+                padding: 2rem 4rem;
+                background-color: rgba(255,255,255,0.6);
+                
+                img {
+                    border-radius: 50%;
+                    margin: 1.5rem 0;
+                    height:15rem;
+                    width: 15rem;
+                }
+                div {
+                    margin-left: 4rem;
+                    h3 {
+                        font-size: 2rem;
+                    }
+                    p {
+                        font-size: 1.5rem;
+                        color: $color-grey-dark;
+                    }
+                }
+            }
+        }
+    }
+}

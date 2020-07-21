@@ -1,0 +1,80 @@
+#about {
+    background: $color-black-1;
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(3, 24rem) 18rem;
+        grid-template-rows: 15rem 15rem;
+        @include respond(tab-port) { // width < 940?
+            grid-template-columns: repeat(4, 1fr);
+        }
+        div {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            &.address {
+                color: $color-secondary-dark;
+                font-size: 1.5rem;
+            }
+            &.payment,
+            &.socials
+            {
+                flex-direction: row;
+            }
+            &.information {
+                grid-row: 1 /span 2;
+                grid-column: 3 / 4;
+            }
+            &.help {
+                grid-row: 1 /span 2;
+                grid-column: 4 / -1;
+            }
+            &.information,
+            &.help {
+                h2 {
+                    color: $color-grey-light-1;
+                    font-size: 1.7rem;
+                    margin-bottom: 1rem;
+                    margin-left: -2.4rem;
+                }
+                li {
+                    list-style: none;
+                    margin-bottom: 1rem;
+                    
+                }
+                
+            }
+            &.copy {
+                color: $color-grey-light-1;
+                font-size: 1.5rem;
+                img {
+                    width: 11rem;
+                }
+            }
+            
+            a {
+                color: $color-grey-light-1;
+                text-decoration: none;
+                font-size: 1.2rem;
+                transition: color .3s;
+                &:hover {color: $color-secondary-dark;}
+            }
+            i {
+                color: $color-grey-dark-2;
+                font-size: 4rem;
+                margin-right: 1.5rem;
+                transition: all .3s;
+                cursor: pointer;
+            }
+            i:hover {color: $color-secondary-dark;}
+            
+       &:not(:nth-child(4)) {
+           border-right: 1px solid $color-grey-dark;
+       }
+       &:first-child,
+       &:nth-child(2) {
+           border-bottom: 1px solid $color-grey-dark;
+       }
+       }   
+    }
+}

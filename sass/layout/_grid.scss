@@ -1,0 +1,58 @@
+#women {
+    margin: 8rem 0 2rem 0;
+    
+    .box {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(3,minmax(300px,1fr));
+        @include respond(tab-port) { // width < 940?
+            grid-template-columns: repeat(2,minmax(25rem,1fr));
+        }
+        .item {
+            img{   
+                margin-bottom: 2.5rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+                cursor: pointer;
+                width: 100%;
+            }
+            .line{
+                width: 70%;
+                height: 3px;
+                background-color: rosybrown;
+                margin: 1rem auto 0 auto;
+            }
+            p {
+                font-size: 1.5rem;
+                transform: translateY(1rem);
+                transition: all .3s;
+            }
+            div {
+               a {
+                color: $color-primary;
+                opacity: 0;
+                visibility:hidden;
+                transform: translateY(2rem);
+                transition: all .3s;
+              }
+           }
+            
+            a {
+                color: $color-black-1;
+                text-decoration: none;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                display: inline-block;
+            }
+            &:hover p{
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-1rem);
+            }
+            &:hover div a {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(-1rem);
+            }
+        }
+    }
+}

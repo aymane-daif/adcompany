@@ -1,0 +1,87 @@
+#main {
+    display: grid;
+    grid-template-columns: 24rem minmax(70rem,1fr);
+    height: 85vh;
+    @include respond(tab-port) { // width < 940?
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 1fr;
+    }
+    .main__sidebar {
+        background-color: rgba(20,20,20,.97);
+        padding: 0;
+        ul {
+            list-style: none;
+            text-align: center;
+            @include respond(tab-port) { // width < 940?
+                justify-content: center;
+                display: flex;
+            }
+
+           
+            li {
+                height: 6.5rem;
+                position: relative;
+                z-index: 0;
+                &::before {
+                    content: "";
+                    position: absolute; 
+                    z-index: -1;  
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 3px;
+                    background-color: $color-primary-dark;
+                    transform: scaleY(0);
+                    transform-origin: left;
+                    transition: transform .2s,
+                                width .4s cubic-bezier(1,0,0,1) .2s,
+                                background-color .1s;
+                                
+                }
+                &:hover{cursor: pointer;}
+                &:hover::before{
+                    transform: scaleY(1);
+                    width: 100%;
+                    
+                }
+                & a:active::before {
+                    background-color: $color-primary-dark;
+                }
+                
+                a {
+                    text-decoration: none;
+                    color: $color-grey-light-1;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                    width: 100%;
+                    height: 100%;
+                    display: inline-block;
+                    text-align: center;
+                    padding: 2rem 0;
+                    @include respond(tab-port) { // width < 940?
+                        padding: 2rem 2rem;
+                    }
+                }
+                &:nth-child(5){
+                @include respond(phone) { // width <610?
+                    display: none;
+                  } 
+                }
+            }
+        }
+    }
+    .main__bg {
+        background: url('../img/bg_large.jpg') no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 6rem;
+            color: lightpink;
+        }
+    
+    }
+}
